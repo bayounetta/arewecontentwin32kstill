@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# logs
+*.log
+
+# node
+node_modules/
+.pnp/
+.pnp.js
+
+# npm
+node_modules/
+.npm
+
+# test
+coverage/
+.eslintcache
+
+# production
+build/
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
