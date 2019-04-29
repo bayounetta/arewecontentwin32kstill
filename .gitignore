@@ -17,6 +17,9 @@ node_modules/
 coverage/
 .eslintcache
 
+# coverage
+.nyc_output/
+
 # production
 build/
 

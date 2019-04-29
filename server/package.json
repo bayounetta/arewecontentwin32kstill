@@ -2,17 +2,29 @@
   "name": "server",
   "version": "0.1.0",
   "scripts": {
-    "test": "mocha ./src/tests/ --recursive --exit",
     "clean": "npx rimraf node_modules/ .cache/ public/ **/__snapshots__/",
     "dev": "nodemon src/app.js",
-    "start": "node src/app.js"
+    "start": "nodemon --exec babel-node ./src/app.js",
+    "build": "babel src --out-dir ./dist",
+    "test": "cross-env NODE_ENV=test nyc mocha ./src/tests/"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "chai": "^4.2.0",
     "express": "^4.16.4",
-    "mocha": "^6.1.4",
     "nodemon": "^1.18.11",
-    "pg-promise": "^8.6.5"
+    "pg-promise": "^8.6.5",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "codecov": "^3.3.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0"
   }
 }
