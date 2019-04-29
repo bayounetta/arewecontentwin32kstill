@@ -2,14 +2,17 @@
   "name": "server",
   "version": "0.1.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./src/tests/ --recursive --exit",
     "clean": "npx rimraf node_modules/ .cache/ public/ **/__snapshots__/",
     "dev": "nodemon src/app.js",
     "start": "node src/app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
     "express": "^4.16.4",
-    "nodemon": "^1.18.11"
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11",
+    "pg-promise": "^8.6.5"
   }
 }

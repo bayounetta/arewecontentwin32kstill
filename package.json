@@ -2,6 +2,7 @@
   "name": "arewecontentwin32kyet",
   "version": "0.1.0",
   "description": "Automated and guided reporting for win32k usage in firefox content processes",
+  "repository": "https://github.com/metalcanine/arewecontentwin32kyet",
   "author": "Mozilla Platform Security",
   "license": "MPL-2.0",
   "main": "index.js",
@@ -10,10 +11,17 @@
     "client": "cd client && npm run dev",
     "server": "cd server && npm run dev",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "concurrently --kill-others-on-fail \"npm run test:client\" \"npm run test:server\" ",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
     "clean": "concurrently \"cd client && npm run clean\" \"cd server && npm run clean\" && npx rimraf node_modules/ .cache/ public/ **/__snapshots__/",
     "start": "cd server && npm start",
-    "heroku-postbuild": "cd client && npm install --only=dev --no-shrinkwrap && npm run build"
+    "db:init": "npm run db:create && npm run db:schema && npm run db:seed",
+    "db:create": "createdb awcw32ky",
+    "db:drop": "dropdb awcw32ky",
+    "db:reset": "npm run db:drop && npm run db:init",
+    "db:schema": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/schema.sql",
+    "db:seed": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/seed.sql"
   },
   "devDependencies": {
     "concurrently": "^4.1.0"
