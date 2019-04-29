@@ -3,10 +3,10 @@
 /* eslint func-names: ["error", "never"] */
 /* eslint no-undef: 0 */
 
-const expect = require('chai').expect;
+import { expect } from 'chai';
 
 describe('Test environment test', function() {
   it('should be a working test environment', function() {
-    expect(true).to.equal(true);
+    return expect(true).to.equal(true);
   });
 });

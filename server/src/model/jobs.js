@@ -1,4 +1,4 @@
-const database = require('./database');
+import database from './database';
 
 function createJob(revision, status) {
   return database.one(
@@ -9,6 +9,6 @@ function createJob(revision, status) {
   );
 }
 
-module.exports = {
+export default {
   createJob,
 }

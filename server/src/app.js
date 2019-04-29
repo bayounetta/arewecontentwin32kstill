@@ -1,8 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
+import express from 'express';
+import bodyParser from 'body-parser';
+import p from 'path';
 
-const routes = require('./routes');
+import routes from './routes';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(join(__dirname, 'client/build')));
 
   app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(p.join(__dirname, 'client/build', 'index.html'));
   });
 }
 

@@ -1,7 +1,7 @@
-const express = require('express');
-const jobs = require('../model/jobs');
+import { Router } from 'express';
+import { createJob } from '../model/jobs';
 
-const router = express.Router();
+const router = Router();
 
 // Post - create new job entry
 router.post('/jobs', (request, response, next) => {
@@ -10,13 +10,13 @@ router.post('/jobs', (request, response, next) => {
     status
   } = request.body;
 
-  return jobs.createJob(revision, status)
+  return createJob(revision, status)
     .then((job) => {
-      response.status(200).json(job);
+      return response.status(200).json(job);
     })
     .catch((error) => {
       next(error);
     });
 });
 
-module.exports = router;
+export default router;

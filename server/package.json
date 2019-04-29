@@ -2,11 +2,24 @@
   "name": "server",
   "version": "0.1.0",
   "scripts": {
-    "clean": "npx rimraf node_modules/ .cache/ public/ **/__snapshots__/",
+    "clean": "npx rimraf node_modules/ .cache/ public/ **/__snapshots__/ coverage/ .nyc_output/",
     "dev": "nodemon src/app.js",
     "start": "nodemon --exec babel-node ./src/app.js",
     "build": "babel src --out-dir ./dist",
-    "test": "cross-env NODE_ENV=test nyc mocha ./src/tests/"
+    "test": "cross-env NODE_ENV=test nyc mocha src/tests/"
+  },
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "all": true,
+    "check-coverage": true,
+    "sourceMap": false,
+    "instrument": false
   },
   "dependencies": {
     "body-parser": "^1.19.0",

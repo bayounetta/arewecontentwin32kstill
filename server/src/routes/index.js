@@ -1,12 +1,12 @@
-const express = require('express');
-const jobs = require('./jobs');
+import { Router } from 'express';
+import jobs from './jobs';
 
-const router = express.Router();
+const router = Router();
 
 router.get('/api/', (request, response) => {
-  response.send({ express: 'Hello From Express' });
+  return response.send({ express: 'Hello From Express' });
 });
 
 router.use('/api/jobs', jobs);
 
-module.exports = router;
+export default router;

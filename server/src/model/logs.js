@@ -1,4 +1,1 @@
-const database = require('./database');
-
-module.exports = {
-}
+import database from './database';

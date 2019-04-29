@@ -1,8 +1,8 @@
-const jobs = require('./jobs');
-const logs = require('./logs');
-const stacks = require('./stacks');
+import jobs from './jobs';
+import logs from './logs';
+import stacks from './stacks';
 
-module.exports = {
+export default {
   jobs,
   logs,
   stacks,

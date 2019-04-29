@@ -1,7 +1,7 @@
-const pgPromise = require('pg-promise');
+import pgPromise from 'pg-promise';
 
 const pgp = pgPromise({});
 
-module.exports = pgp(
+export default pgp(
   process.env.DATABASE_URL || 'postgres://localhost:5432/awcw32ky'
 );
