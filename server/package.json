@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "clean": "npx rimraf node_modules/ .cache/ public/ **/__snapshots__/ coverage/ .nyc_output/",
-    "dev": "nodemon src/app.js",
+    "dev": "nodemon --exec babel-node ./src/app.js",
     "start": "nodemon --exec babel-node ./src/app.js",
     "build": "babel src --out-dir ./dist",
     "test": "cross-env NODE_ENV=test nyc mocha src/tests/"
