@@ -1,8 +1,11 @@
 DROP TABLE IF EXISTS jobs CASCADE;
 CREATE TABLE jobs (
   id SERIAL PRIMARY KEY,
-  revision VARCHAR(32) NOT NULL,
-  status VARCHAR(32) DEFAULT 'new',
+  revision VARCHAR(32) DEFAULT '-',
+  test_tag VARCHAR(64) NOT NULL,
+  build_tag VARCHAR(64) NOT NULL,
+  job_status VARCHAR(32) DEFAULT 'new',
+  build_flags VARCHAR(256) DEFAULT 'none',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
