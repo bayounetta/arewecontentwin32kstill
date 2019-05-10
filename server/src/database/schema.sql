@@ -1,10 +1,11 @@
 DROP TABLE IF EXISTS jobs CASCADE;
+CREATE TYPE status_t AS ENUM ('new', 'pending', 'complete');
 CREATE TABLE jobs (
   id SERIAL PRIMARY KEY,
   revision VARCHAR(32) DEFAULT '-',
   test_tag VARCHAR(64) NOT NULL,
   build_tag VARCHAR(64) NOT NULL,
-  job_status VARCHAR(32) DEFAULT 'new',
+  job_status status_t DEFAULT 'new',
   build_flags VARCHAR(256) DEFAULT 'none',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
@@ -21,6 +22,7 @@ CREATE TABLE stacks (
   id SERIAL PRIMARY KEY,
   log_id INTEGER REFERENCES logs(id) NOT NULL,
   frequency SMALLINT DEFAULT 1,
-  frames VARCHAR(1024) NOT NULL,
+  short_frames VARCHAR(1024) NOT NULL,
+  long_frames VARCHAR(1024) NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
