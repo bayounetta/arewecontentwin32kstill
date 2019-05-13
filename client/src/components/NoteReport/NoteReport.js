@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './NoteReport.css';
 
+// TODO: after adding redux move error reporting here?
 class NoteReport extends Component {
   render() {
     return (
