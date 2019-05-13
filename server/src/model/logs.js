@@ -20,9 +20,12 @@ const getLogById = (log_id) => {
 
 const getLogByJobId = (job_id) => {
   return database.any(
-    `SELECT *
+    `SELECT
+      logs.id, logs.job_id, logs.created_at, stacks.frequency,
+      stacks.short_frames, stacks.long_frames
     FROM logs
-    WHERE job_id = $1`,
+    INNER JOIN stacks
+    ON logs.id = stacks.log_id`,
     [job_id]
   );
 };

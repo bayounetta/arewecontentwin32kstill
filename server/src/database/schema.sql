@@ -22,6 +22,7 @@ CREATE TABLE stacks (
   id SERIAL PRIMARY KEY,
   log_id INTEGER REFERENCES logs(id) NOT NULL,
   frequency SMALLINT DEFAULT 1,
+  nt_call VARCHAR(128) NOT NULL,
   short_frames VARCHAR(1024) NOT NULL,
   long_frames VARCHAR(1024) NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
