@@ -67,7 +67,7 @@ router.get('/pending', (request, response, next) => {
 });
 
 // Get - retrieve all jobs with status completed
-router.get('/completed', (request, response, next) => {
+router.get('/complete', (request, response, next) => {
   return jobs
     .getCompletedJobs()
     .then((jobs) => {
