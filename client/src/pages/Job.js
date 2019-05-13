@@ -6,24 +6,45 @@ export default class Job extends Component {
 
     this.state = {
       error: null,
-      isLoaded: false,
+      jobLoaded: false,
+      stackLoaded: false,
       jobDetails: {},
+      stacks: [],
     };
   }
 
   componentDidMount() {
-    fetch(`/api/jobs/${this.props.match.params.jobId}`)
+    let { jobId } = this.props.match.params;
+
+    fetch(`/api/jobs/${jobId}`)
       .then((response) => response.json())
       .then(
         (job) => {
           this.setState({
-            isLoaded: true,
+            jobLoaded: true,
             jobDetails: job,
           });
         },
         (error) => {
           this.setState({
-            isLoaded: true,
+            jobLoaded: true,
+            error,
+          });
+        }
+      );
+
+    fetch(`/api/jobs/${jobId}/log`)
+      .then((response) => response.json())
+      .then(
+        (log) => {
+          this.setState({
+            stackLoaded: true,
+            stacks: log,
+          });
+        },
+        (error) => {
+          this.setState({
+            jobLoaded: true,
             error,
           });
         }
@@ -31,12 +52,12 @@ export default class Job extends Component {
   }
 
   render() {
-    const { jobDetails } = this.state;
-    const { error, isLoaded } = this.state;
+    const { jobDetails, stacks } = this.state;
+    const { error, jobLoaded, stackLoaded } = this.state;
 
     if (error) {
       return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
+    } else if (!jobLoaded && !stackLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
@@ -48,6 +69,15 @@ export default class Job extends Component {
           <div>flags: {jobDetails.build_flags}</div>
           <div>date: {jobDetails.created_at.split('T')[0]}</div>
           <div>time: {jobDetails.created_at.split('T')[1].split('.')[0]}</div>
+
+          {stacks.map((node) => (
+            <div>
+              <p>
+                {node.frequency} - {node.nt_call}
+              </p>
+              <p>{node.short_frames + node.long_frames}</p>
+            </div>
+          ))}
         </div>
       );
     }
