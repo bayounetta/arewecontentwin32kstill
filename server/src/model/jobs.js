@@ -54,7 +54,7 @@ const getCompletedJobs = () => {
   return database.any(
     `SELECT *
       FROM jobs
-      WHERE job_status = 'completed'`
+      WHERE job_status = 'complete'`
   );
 };
 

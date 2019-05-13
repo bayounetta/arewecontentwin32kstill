@@ -55,7 +55,7 @@ router.get('/new', (request, response, next) => {
 });
 
 // Get - retrieve all jobs with status pending
-router.get('/pending', (request, repsonse, next) => {
+router.get('/pending', (request, response, next) => {
   return jobs
     .getPendingJobs()
     .then((jobs) => {
