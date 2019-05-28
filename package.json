@@ -1,6 +1,6 @@
 {
   "name": "arewecontentwin32kyet",
-  "version": "0.1.0",
+  "version": "2.1.0",
   "description": "Automated and guided reporting for win32k usage in firefox content processes",
   "repository": "https://github.com/metalcanine/arewecontentwin32kyet",
   "author": "Mozilla Platform Security",
