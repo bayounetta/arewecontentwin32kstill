@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
-import NoteReport from '../NoteReport/NoteReport';
-
 import './Header.css';
 
-class Header extends Component {
+export default class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <p>Header</p>
-        <NoteReport note={this.props.note} />
+        <div className="title">
+          <img src="/images/clean.svg" alt="a squeegee icon" />
+          <a href="/" >AreWeContentWin32KYet?</a>
+        </div>
+        <p className="light">(no, but we're getting there)</p>
       </div>
     );
   }
 }
-
-export default Header;

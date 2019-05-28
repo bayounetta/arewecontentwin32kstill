@@ -4,28 +4,28 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 
 import Home from './pages/Home';
-import JobList from './pages/JobList';
+import Jobs from './pages/Jobs';
 import About from './pages/About';
-import Job from './pages/Job';
 
+import './styles/reset.css';
+import './styles/global.css';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
-      <Router>
-        <Link to="/">Home</Link>
-        <Link to="/jobs">Jobs</Link>
-        <Link to="/about">About</Link>
+      <div className="router_block">
+        <Router>
+            <Link className="router" to="/">Home</Link>
+            <Link className="router" to="/jobs">Jobs</Link>
+            <Link className="router" to="/about">About</Link>
 
-        <Route exact path="/" component={Home} />
-        <Route path="/jobs" component={JobList} />
-        <Route path="/about" component={About} />
-        <Route path="/jobs/listing/:jobId" component={Job} />
-      </Router>
+          <Route exact path="/" component={Home} />
+          <Route path="/jobs" component={Jobs} />
+          <Route path="/about" component={About} />
+        </Router>
+      </div>
     </div>
   );
 }
-
-export default App;

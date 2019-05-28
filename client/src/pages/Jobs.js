@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 
-import Job from '../components/JobListing/JobListing';
+import JobList from '../components/JobList/JobList';
+import Job from '../components/Job/Job';
 
-export default class JobList extends Component {
+export default class Jobs extends Component {
   constructor(props) {
     super(props);
 
@@ -14,6 +15,7 @@ export default class JobList extends Component {
       new: [],
       pending: [],
       complete: [],
+      failing: [],
     };
   }
 
@@ -40,6 +42,7 @@ export default class JobList extends Component {
     fetchJobs('new');
     fetchJobs('pending');
     fetchJobs('complete');
+    fetchJobs('failing');
   }
 
   render() {
@@ -47,34 +50,42 @@ export default class JobList extends Component {
     const { error, isLoaded } = this.state;
 
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div className="Page">Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div className="Page">Loading...</div>;
     } else {
       return (
-        <div>
-          <h2>Job List</h2>
-          <Link to={`${match.url}/latest`}>latest</Link>
-          <Link to={`${match.url}/new`}>new</Link>
-          <Link to={`${match.url}/pending`}>pending</Link>
-          <Link to={`${match.url}/complete`}>complete</Link>
+        <div className="Page">
+          <Link className="job_link" to={`${match.url}/latest`}>latest</Link>
+          <Link className="job_link" to={`${match.url}/new`}>new</Link>
+          <Link className="job_link" to={`${match.url}/pending`}>pending</Link>
+          <Link className="job_link" to={`${match.url}/complete`}>complete</Link>
+          <Link className="job_link" to={`${match.url}/failing`}>failing</Link>
 
           <Route
             exact
             path={`${match.path}/latest`}
-            render={() => <Job jobs={this.state.latest} />}
+            render={() => <JobList jobs={this.state.latest} />}
           />
           <Route
             path={`${match.path}/new`}
-            render={() => <Job jobs={this.state.new} />}
+            render={() => <JobList jobs={this.state.new} />}
           />
           <Route
             path={`${match.path}/pending`}
-            render={() => <Job jobs={this.state.pending} />}
+            render={() => <JobList jobs={this.state.pending} />}
           />
           <Route
             path={`${match.path}/complete`}
-            render={() => <Job jobs={this.state.complete} />}
+            render={() => <JobList jobs={this.state.complete} />}
+          />
+          <Route
+            path={`${match.path}/failing`}
+            render={() => <JobList jobs={this.state.failing} />}
+          />
+          <Route
+            path={`${match.path}/listing/:id`}
+            component={Job}
           />
         </div>
       );

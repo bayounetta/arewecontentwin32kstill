@@ -4,7 +4,7 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { groupID: '', taskID: '' };
+    this.state = { task: '' };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,35 +12,49 @@ export default class Home extends Component {
 
   handleChange(event) {
     this.setState({
-      groupID: event.target.groupID,
-      taskID: event.target.taskID,
+      [event.target.name]: event.target.value,
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    alert('Searching for job ' + this.state.taskID);
-    console.log(this.state.taskID);
+
+    let myInit = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        task: this.state.task,
+      }),
+    };
+
+    fetch('/api/jobs', myInit)
+      .then((jsonResponse) => {
+        console.log(jsonResponse);
+        this.setState({
+          task: '',
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   render() {
     return (
-      <div>
-        <h2>Home</h2>
+      <div className="Page">
         <form>
-          <label>groupID</label>
+          <label>Create a new job from a taskID</label>
           <input
             type="text"
-            value={this.state.groupID}
+            name="task"
+            ref="task"
+            value={this.state.task}
             onChange={this.handleChange}
           />
-          <label>taskID</label>
-          <input
-            type="text"
-            value={this.state.taskID}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="Submit" />
+          <input onClick={this.handleSubmit} className="submit" type="submit" value="submit" />
         </form>
       </div>
     );

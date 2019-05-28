@@ -1,3 +1,110 @@
-.App {
-  text-align: center;
+.Page {
+  width: 80%;
+  padding-top: 4%;
+}
+
+.Page p {
+  text-align: left;
+  padding-left: 1vw;
+  line-height: 1.4em;
+}
+
+label {
+  display: block;
+  margin: 1em;
+  font-size: 22px;
+}
+
+input {
+  padding: 0.4em;
+  margin: 0;
+  border: none;
+  font-size: 18px;
+}
+
+.submit {
+  padding: 0.4em;
+  margin: 0;
+  border: none;
+  background: #353c42;
+  color: #b892ff;
+}
+
+a {
+  text-decoration: none;
+  color: #2525ff;
+}
+
+.router_block {
+  height: 14%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+a.router {
+  color: #b892ff;
+  padding: 1.4em;
+  background-color: #353c42;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 29.3%;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+a.router:focus {
+  background-color: #212529;
+}
+
+a.router:hover {
+  background-color: #4e5861;
+}
+
+a.job_link {
+  border-radius: 0.55em;
+  background: #353c42;
+  padding: 0.4em 1.4em ;
+  margin-left: 1em;
+  margin-right: 1em;
+  color: #b892ff;
+}
+
+a.job_link:focus {
+  background-color: #212529;
+}
+
+a.job_link:hover {
+  background: #4e5861;
+}
+
+.job_list {
+  padding-top: 6%;
+  width: 60%;
+  margin: auto;
+}
+
+.job_listing {
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stack_list {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.stack_title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stack_listing {
+  padding-top: 2em;
+  font-weight: normal;
+}
+
+p.about {
+  padding-bottom: 2em;
 }
