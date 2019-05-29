@@ -9,7 +9,7 @@
   "scripts": {
     "install": "concurrently \"cd client && npm i\" \"cd server && npm i\"",
     "clean": "concurrently \"cd client && npm run clean\" \"cd server && npm run clean\" && npx rimraf node_modules/ .cache/ public/ **/__snapshots__/",
-    "build": "echo \"TODO!\"",
+    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
     "start": "cd server && npm start",
     "start:client": "cd client && npm run start:dev",
     "start:server": "cd server && npm run start:dev",
@@ -24,7 +24,7 @@
     "db:schema": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/schema.sql",
     "db:seed": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/seed.sql"
   },
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^4.1.0"
   }
 }

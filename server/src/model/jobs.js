@@ -6,14 +6,14 @@ export function createJob(
   mozharness,
   commands,
   task,
-  taskGroup,
+  build,
   build_flags
 ) {
   return database.one(
-    `INSERT INTO jobs(revision, author, mozharness, commands, task, taskGroup, build_flags)
+    `INSERT INTO jobs(revision, author, mozharness, commands, task, build, build_flags)
     VALUES($1, $2, $3, $4, $5, $6, $7)
     RETURNING *`,
-    [revision, author, mozharness, commands, task, taskGroup, build_flags]
+    [revision, author, mozharness, commands, task, build, build_flags]
   );
 }
 

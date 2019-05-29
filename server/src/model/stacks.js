@@ -9,7 +9,8 @@ export function createStack(
 ) {
   return database.one(
     `INSERT INTO stacks (job_id, frequency, nt_call, short_frames, long_frames)
-    VALUES ($1, $2, $3, $4, $5)`,
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING *`,
     [job_id, frequency, nt_call, short_frames, long_frames]
   );
 }

@@ -102,7 +102,7 @@ export default class Job extends Component {
                 <p className="stack_title">
                   {stack.frequency} - {stack.nt_call}
                 </p>
-                {stack.short_frames.split('\n').map((frame) => (
+                {JSON.parse(stack.short_frames).map((frame) => (
                   <p>{frame}</p>
                 ))}
               </li>

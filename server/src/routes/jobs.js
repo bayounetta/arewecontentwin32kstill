@@ -29,6 +29,7 @@ router.post('/', (request, response, next) => {
         return response.status(400).json({ note: `task ${task} not found` });
       } else {
         taskConfig = JSON.parse(taskConfig);
+        console.log(taskConfig.payload.mounts[0].content.taskId);
         if (taskConfig.tags.os !== 'windows') {
           return response
             .status(400)
@@ -38,11 +39,11 @@ router.post('/', (request, response, next) => {
         return createJob(
           taskConfig.metadata.description.split('(')[2].split(')')[0],
           taskConfig.metadata.owner,
-          '', // mozharness
+          taskConfig.payload.env,
           taskConfig.payload.command.join(' '),
-          taskConfig.taskGroupId,
           task,
-          '' // build_flags
+          taskConfig.payload.mounts[0].content.taskId,
+          'none',
         )
           .then((job) => {
             return response.status(201).json(job);

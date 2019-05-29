@@ -1,4 +1,4 @@
-INSERT INTO jobs (id, revision, author, task, taskGroup, job_status, build_flags, created_at)
+INSERT INTO jobs (id, revision, author, task, build, job_status, build_flags, created_at)
 VALUES
 (1000, 'https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'LliEwcPHQVmwIzBDWqVC5A', 'K7dqxQiERC-2Dttvxlwf7Q', 'complete', 'none', '2019-05-20 11:07:02.821201-07'),
 (2000, 'https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'e8Fp8SX5T8C2sH-03BWdvw', 'K7dqxQiERC-2Dttvxlwf7Q', 'new', 'none', '2019-05-20 11:37:02.166184-07'),

@@ -27,7 +27,7 @@ input {
   margin: 0;
   border: none;
   background: #353c42;
-  color: #b892ff;
+  color: #e5a5c2;
 }
 
 a {
@@ -43,7 +43,7 @@ a {
 }
 
 a.router {
-  color: #b892ff;
+  color: #e5a5c2;
   padding: 1.4em;
   background-color: #353c42;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
@@ -67,7 +67,7 @@ a.job_link {
   padding: 0.4em 1.4em ;
   margin-left: 1em;
   margin-right: 1em;
-  color: #b892ff;
+  color: #e5a5c2;
 }
 
 a.job_link:focus {

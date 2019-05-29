@@ -7,7 +7,7 @@ CREATE TABLE jobs (
   mozharness VARCHAR (512) DEFAULT '-',
   commands VARCHAR (512) DEFAULT '-',
   task VARCHAR(64) NOT NULL,
-  taskGroup VARCHAR(64) NOT NULL,
+  build VARCHAR(64) NOT NULL,
   job_status status_t DEFAULT 'new',
   build_flags VARCHAR(256) DEFAULT 'none',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
