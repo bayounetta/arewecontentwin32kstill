@@ -1,8 +1,8 @@
 {
-  "name": "arewecontentwin32kyet",
-  "version": "2.1.0",
+  "name": "arewecontentwin32kstill",
+  "version": "2.2.0",
   "description": "Automated and guided reporting for win32k usage in firefox content processes",
-  "repository": "https://github.com/metalcanine/arewecontentwin32kyet",
+  "repository": "https://github.com/metalcanine/arewecontentwin32kstill",
   "author": "Mozilla Platform Security",
   "license": "MPL-2.0",
   "main": "index.js",

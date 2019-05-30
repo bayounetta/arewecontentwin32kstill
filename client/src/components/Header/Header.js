@@ -8,9 +8,9 @@ export default class Header extends Component {
       <div className="Header">
         <div className="title">
           <img src="/images/clean.svg" alt="a squeegee icon" />
-          <a href="/" >AreWeContentWin32KYet?</a>
+          <a href="/" >AreWeContentWin32KStill?</a>
         </div>
-        <p className="light">(no, but we're getting there)</p>
+        <p className="light">(yes, but we're getting there)</p>
       </div>
     );
   }
