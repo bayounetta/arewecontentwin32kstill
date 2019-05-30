@@ -1,13 +1,13 @@
-INSERT INTO jobs (id, revision, author, task, build, job_status, build_flags, created_at)
+INSERT INTO jobs (revision, author, task, build, job_status, build_flags, created_at)
 VALUES
-(1000, 'https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'LliEwcPHQVmwIzBDWqVC5A', 'K7dqxQiERC-2Dttvxlwf7Q', 'complete', 'none', '2019-05-20 11:07:02.821201-07'),
-(2000, 'https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'e8Fp8SX5T8C2sH-03BWdvw', 'K7dqxQiERC-2Dttvxlwf7Q', 'new', 'none', '2019-05-20 11:37:02.166184-07'),
-(3000, 'https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'AicdbL6yTayiWlZ6d7bDug', 'K7dqxQiERC-2Dttvxlwf7Q', 'new', 'none', '2019-05-20 11:37:02.166184-07'),
-(4000, 'https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'J234kTmGRQ6yElrGjmzmWA', 'K7dqxQiERC-2Dttvxlwf7Q', 'pending', 'none', '2019-05-20 11:37:02.166184-07');
+('https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'LliEwcPHQVmwIzBDWqVC5A', 'K7dqxQiERC-2Dttvxlwf7Q', 'complete', 'none', '2019-05-20 11:07:02.821201-07'),
+('https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'e8Fp8SX5T8C2sH-03BWdvw', 'K7dqxQiERC-2Dttvxlwf7Q', 'new', 'none', '2019-05-20 11:37:02.166184-07'),
+('https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'AicdbL6yTayiWlZ6d7bDug', 'K7dqxQiERC-2Dttvxlwf7Q', 'new', 'none', '2019-05-20 11:37:02.166184-07'),
+('https://treeherder.mozilla.org/#/jobs?repo=mozilla-inbound&revision=eb44ee7510d1ce6ec33e82453d774a91427c04fc', 'dvarga@mozilla.com', 'J234kTmGRQ6yElrGjmzmWA', 'K7dqxQiERC-2Dttvxlwf7Q', 'pending', 'none', '2019-05-20 11:37:02.166184-07');
 
-INSERT INTO stacks (id, job_id, frequency, nt_call, short_frames, long_frames, created_at)
+INSERT INTO stacks (job_id, frequency, nt_call, short_frames, long_frames, created_at)
 VALUES
-(979, 1000, 24, 'win32u!NtGdiDdDDIAcquireKeyedMutex2', 'win32u!NtGdiDdDDIAcquireKeyedMutex2
+(1, 24, 'win32u!NtGdiDdDDIAcquireKeyedMutex2', 'win32u!NtGdiDdDDIAcquireKeyedMutex2
 d3d11!NDXGI::CDevice::WaitForGPUSyncObject
 d3d11!NDXGI::CDevice::DXGIAcquireSync
 d3d11!NDXGI::CResource::AcquireSync xul!mozilla::layers::AutoTextureLock::AutoTextureLock
@@ -31,7 +31,7 @@ KERNEL32!BaseThreadInitThunk
 mozglue!mozilla::interceptor::FuncHook<mozilla::interceptor::WindowsDllInterceptor<mozilla::interceptor::VMSharingPolicyShared<mozilla::interceptor:MMPolicyInProcess128>
 mozglue!patched_BaseThreadInitThunk
 ntdll!RtlUserThreadStart', '--', '2019-05-20 11:07:02.821201-07'),
-(983, 1000, 15, 'win32u!NtUserGetObjectInformation', 'win32u!NtUserGetObjectInformation
+(1, 15, 'win32u!NtUserGetObjectInformation', 'win32u!NtUserGetObjectInformation
 combase!CRpcResolver::GetThreadWinstaDesktop
 combase!<lambda_42f1a29483ec03d26359468a17427162>::operator()
 combase!CRpcResolver::GetConnection
@@ -49,7 +49,7 @@ firefox!wmain
 firefox!__scrt_common_main_seh
 KERNEL32!BaseThreadInitThunk
 ntdll!RtlUserThreadStart', '--', '2019-05-20 11:07:02.8357-07'),
-(984, 1000, 82, 'win32u!NtUserGetDpiForCurrentProcess', 'win32u!NtUserGetDpiForCurrentProcess
+(1, 82, 'win32u!NtUserGetDpiForCurrentProcess', 'win32u!NtUserGetDpiForCurrentProcess
 user32!GetDpiForSystem
 UxTheme!_InternalSystemParametersInfo
 UxTheme!ThemeSystemParametersInfoA
@@ -198,7 +198,7 @@ firefox!wmain
 firefox!__scrt_common_main_seh
 KERNEL32!BaseThreadInitThunk
 ntdll!RtlUserThreadStart', '--', '2019-05-20 11:07:02.899435-07'),
-(985, 1000, 82, 'win32u!NtUserSystemParametersInfo', 'win32u!NtUserSystemParametersInfo
+(1, 82, 'win32u!NtUserSystemParametersInfo', 'win32u!NtUserSystemParametersInfo
 user32!RealSystemParametersInfoA
 UxTheme!ClassicSystemParametersInfoA
 UxTheme!_InternalSystemParametersInfo
@@ -348,7 +348,7 @@ firefox!wmain
 firefox!__scrt_common_main_seh
 KERNEL32!BaseThreadInitThunk
 ntdll!RtlUserThreadStart', '--', '2019-05-20 11:07:02.90115-07'),
-(987, 1000, 56, 'win32u!NtUserGetDpiForCurrentProcess', 'win32u!NtUserGetDpiForCurrentProcess
+(1, 56, 'win32u!NtUserGetDpiForCurrentProcess', 'win32u!NtUserGetDpiForCurrentProcess
 user32!RealGetSystemMetrics
 UxTheme!ThemeGetSystemMetrics
 user32!GetSystemMetrics
@@ -404,7 +404,7 @@ firefox!wmain
 firefox!__scrt_common_main_seh
 KERNEL32!BaseThreadInitThunk
 ntdll!RtlUserThreadStart', '--', '2019-05-20 11:07:02.901959-07'),
-(989, 1000, 37, 'win32u!NtGdiSetIcmMode', 'win32u!NtGdiSetIcmMode
+(1, 37, 'win32u!NtGdiSetIcmMode', 'win32u!NtGdiSetIcmMode
 gdi32full!IcmSelectColorTransform
 gdi32full!IcmDeleteLocalDC
 GDI32!InternalDeleteDC
