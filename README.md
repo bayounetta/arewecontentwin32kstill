@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://www.arewecontentprocesswin32kstill.com">Are We Content Process Win32K Ready Still?</a>
+  <a href="https://www.arewecontentprocesswin32kstill.com">Are We Content Process Win32K Still?</a>
 </h1>
 
 ## about
