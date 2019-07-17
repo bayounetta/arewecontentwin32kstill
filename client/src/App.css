@@ -15,6 +15,15 @@ label {
   font-size: 22px;
 }
 
+label a {
+  color: #2525ff4d;
+}
+
+label .tiny {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
 input {
   padding: 0.4em;
   margin: 0;

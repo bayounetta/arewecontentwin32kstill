@@ -46,7 +46,16 @@ export default class Home extends Component {
     return (
       <div className="Page">
         <form>
-          <label>Create a new job from a taskID</label>
+          <label>
+            Create a new job a taskID <br />
+            <span className="tiny">
+              (remember to{' '}
+              <a href="https://www.github.com/metalcanine/arewecontentwin32kstill/wiki/Guide">
+                upload
+              </a>{' '}
+              symbols first! )
+            </span>
+          </label>
           <input
             type="text"
             name="task"
@@ -54,7 +63,12 @@ export default class Home extends Component {
             value={this.state.task}
             onChange={this.handleChange}
           />
-          <input onClick={this.handleSubmit} className="submit" type="submit" value="submit" />
+          <input
+            onClick={this.handleSubmit}
+            className="submit"
+            type="submit"
+            value="submit"
+          />
         </form>
       </div>
     );
