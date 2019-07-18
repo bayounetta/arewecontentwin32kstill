@@ -53,7 +53,7 @@ export default class Home extends Component {
               <a href="https://www.github.com/metalcanine/arewecontentwin32kstill/wiki/Guide">
                 upload
               </a>{' '}
-              symbols first! )
+              symbols first!)
             </span>
           </label>
           <input

@@ -15,11 +15,8 @@ label {
   font-size: 22px;
 }
 
-label a {
-  color: #2525ff4d;
-}
-
 label .tiny {
+  opacity: 50%;
   font-size: 12px;
   font-weight: lighter;
 }
