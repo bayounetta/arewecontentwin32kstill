@@ -22,9 +22,13 @@
     "db:drop": "dropdb awcw32ky",
     "db:reset": "npm run db:drop && npm run db:init",
     "db:schema": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/schema.sql",
-    "db:seed": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/seed.sql"
+    "db:seed": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/seed.sql",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "concurrently": "^4.1.0"
-  }
+    "concurrently": "^4.1.0",
+    "snyk": "^1.258.2"
+  },
+  "snyk": true
 }
