@@ -25,6 +25,6 @@
     "db:seed": "psql -h localhost -p 5432 awcw32ky < ./server/src/database/seed.sql"
   },
   "dependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^5.0.1"
   }
 }
